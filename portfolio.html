@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | MANU PHOTOGRAPHY</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<link rel="manifest" href="site.webmanifest">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#0d0d0d;
+color:white;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+z-index:1003;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:30px;
+font-family:Cinzel;
+color:#D4AF37;
+text-decoration:none;
+font-weight:bold;
+}
+
+.logo img{
+width:44px;
+height:44px;
+object-fit:cover;
+border-radius:50%;
+flex:none;
+}
+
+.menu-toggle{
+display:none;
+flex-direction:column;
+gap:5px;
+background:transparent;
+border:none;
+cursor:pointer;
+padding:0;
+margin-left:auto;
+z-index:1004;
+}
+
+.menu-toggle span{
+width:28px;
+height:2px;
+background:#fff;
+transition:all .3s ease;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#fff;
+transition:.3s;
+}
+
+nav ul li a:hover,
+.active{
+color:#D4AF37;
+}
+
+@media(max-width:900px){
+header{padding:16px 18px;gap:14px;}
+
+.logo{font-size:24px;gap:10px;line-height:1.05;}
+
+.logo img{width:34px;height:34px;}
+
+.menu-toggle{display:flex;}
+nav{
+position:fixed;
+top:0;
+left:-100%;
+width:280px;
+height:100vh;
+background:#050505;
+padding:90px 24px 24px;
+transition:left .3s ease;
+box-shadow:8px 0 30px rgba(0,0,0,.45);
+z-index:1002;
+border-right:1px solid rgba(212,175,55,0.3);
+}
+nav.open{left:0;}
+nav ul{flex-direction:column;gap:18px;align-items:flex-start;}
+nav ul li{margin-left:0;}
+nav ul li a{display:block;font-size:18px;padding:12px 6px;width:100%;}
+}
+
+body.menu-open::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+z-index:1001;
+pointer-events:auto;
+}
+
+body.menu-open{overflow:hidden;}
+
+.banner{
+margin-top:80px;
+height:45vh;
+background:url("photo-h.jpg") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.banner h1{
+font-size:60px;
+font-family:Cinzel;
+color:#D4AF37;
+}
+
+.categories{
+padding:50px 10%;
+text-align:center;
+}
+
+.categories h2{
+font-family:Cinzel;
+color:#D4AF37;
+margin-bottom:30px;
+font-size:40px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.buttons button{
+
+padding:12px 25px;
+border:none;
+background:#181818;
+color:white;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.buttons button:hover{
+
+background:#D4AF37;
+color:#000;
+
+}
+
+.gallery{
+
+padding:20px 10% 80px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:#181818;
+border-radius:12px;
+overflow:hidden;
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card img{
+
+width:100%;
+height:250px;
+object-fit:cover;
+
+}
+
+.card h3{
+
+padding:20px;
+text-align:center;
+color:#D4AF37;
+
+}
+
+footer{
+
+background:#111;
+padding:30px;
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo"><img src="Untitled design (4).png" alt="MANU Photography logo" referrerpolicy="no-referrer">MANU PHOTOGRAPHY</div>
+
+<button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="portfolio.html" class="active">Portfolio</a></li>
+
+<li><a href="services.html">Services</a></li>
+
+<li><a href="booking.html">Booking</a></li>
+
+<li><a href="gallery.html">Gallery</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="banner">
+
+
+
+</section>
+
+<section class="categories">
+
+<h2>Photography Categories</h2>
+
+<div class="buttons">
+
+<a class="service-link" href="gallery.html?folder=photos"><div class="card"><button data-folder="photos">All</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Wedding"><div class="card"><button data-folder="photos/Wedding">Wedding</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Pre Wedding"><div class="card"><button data-folder="photos/Pre Wedding">Pre Wedding</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Haldi"><div class="card"><button data-folder="photos/Haldi">Haldi</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Mehendi"><div class="card"><button data-folder="photos/Mehendi">Mehendi</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Engagement"><div class="card"><button data-folder="photos/Engagement">Engagement</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Bride"><div class="card"><button data-folder="photos/Bride">Bride</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Groom"><div class="card"><button data-folder="photos/Groom">Groom</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Halfsaree"><div class="card"><button data-folder="photos/Halfsaree">Halfsaree</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Birthday"><div class="card"><button data-folder="photos/Birthday">Birthday</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Baby Shoot"><div class="card"><button data-folder="photos/Baby Shoot">Baby Shoot</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Maternity"><div class="card"><button data-folder="photos/Maternity">Maternity</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Drone"><div class="card"><button data-folder="photos/Drone">Drone</button></div></a>
+<a class="service-link" href="gallery.html?folder=photos/Cinematic"><div class="card"><button data-folder="photos/Cinematic">Cinematic</button></div></a>
+
+</section>
+
+
+</section>
+
+<footer>
+
+<h2 style="color:#a5861d;">MANU PHOTOGRAPHY</h2>
+
+<p>Dreams Change Into Stories</p>
+
+<p>📞 +91 8019225206</p>
+
+<p>© 2026 MANU PHOTOGRAPHY. All Rights Reserved.</p>
+
+</footer>
+
+
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+if (menuToggle && nav) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    document.body.classList.toggle('menu-open', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', (event) => {
+    if (window.innerWidth <= 900 && nav.classList.contains('open') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
+      nav.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        nav.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+</script>
+</body>
+</html>
