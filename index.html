@@ -450,7 +450,18 @@ margin-bottom:15px;
 }
 
 }
+.recent-card img,
+.recent-card video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:12px;
+}
 
+.recent-card video{
+    background:#000;
+}
 </style>
 
 </head>
@@ -579,34 +590,52 @@ async function loadRecentImages() {
 
         const response = await fetch("https://manuphotography.onrender.com/recent");
 
-        const images = await response.json();
+        if (!response.ok) throw new Error("Failed to fetch recent media");
+
+        const media = await response.json();
 
         slider.innerHTML = "";
 
-        images.forEach(image => {
+        media.forEach(item => {
 
             slider.innerHTML += `
-                <a href="gallery.html?folder=${encodeURIComponent(image.folder)}"
-   class="recent-card">
-                    <img src="${image.url}" loading="lazy">
+                <a href="gallery.html?folder=${encodeURIComponent(item.folder)}"
+                   class="recent-card">
+
+                    ${
+                        item.type === "video"
+                        ? `
+                        <video
+                            src="${item.url}"
+                            muted
+                            autoplay
+                            loop
+                            playsinline
+                            preload="metadata">
+                        </video>
+                        `
+                        : `
+                        <img
+                            src="${item.url}"
+                            loading="lazy"
+                            alt="${item.id}">
+                        `
+                    }
 
                 </a>
             `;
 
         });
 
-       const lightbox = GLightbox({
-        selector: ".glightbox",
-        touchNavigation: true,
-        loop: true,
-        zoomable: true,
-        openEffect: "zoom",
-        closeEffect: "fade"
-    });
-
     } catch(err) {
 
-        console.log(err);
+        console.error(err);
+
+        slider.innerHTML = `
+            <p style="color:#D4AF37;text-align:center;">
+                Failed to load recent media.
+            </p>
+        `;
 
     }
 
@@ -617,11 +646,8 @@ loadRecentImages();
 document.querySelector(".left").onclick = () => {
 
     slider.scrollBy({
-
-        left:-380,
-
-        behavior:"smooth"
-
+        left: -380,
+        behavior: "smooth"
     });
 
 };
@@ -629,11 +655,8 @@ document.querySelector(".left").onclick = () => {
 document.querySelector(".right").onclick = () => {
 
     slider.scrollBy({
-
-        left:380,
-
-        behavior:"smooth"
-
+        left: 380,
+        behavior: "smooth"
     });
 
 };
@@ -646,26 +669,20 @@ setInterval(() => {
     ) {
 
         slider.scrollTo({
-
-            left:0,
-            behavior:"smooth"
-
+            left: 0,
+            behavior: "smooth"
         });
 
-    }
-
-    else{
+    } else {
 
         slider.scrollBy({
-
-            left:380,
-            behavior:"smooth"
-
+            left: 380,
+            behavior: "smooth"
         });
 
     }
 
-},4000);
+}, 4000);
 
 </script>
 <script>
