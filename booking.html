@@ -450,7 +450,7 @@ bookingForm.addEventListener('submit', async function(e) {
   }
 
   const form = e.target;
-  const url = 'http://localhost:8000/booking';
+  const url = 'https://manuphotography.onrender.com/booking';
   const data = new FormData(form);
 
   submitButton.disabled = true;
@@ -481,7 +481,7 @@ bookingForm.addEventListener('submit', async function(e) {
       emailData.append('subject', 'Your booking request has been received');
       emailData.append('message', `Hello ${formValues.fullName},\n\nYour booking request has been received.\n\nEvent Type: ${formValues.photoshootType}\nDate: ${formValues.date}\nTime: ${formValues.time}\nLocation: ${formValues.location || 'Not provided'}\nPeople: ${formValues.people || 'Not provided'}\nRequirements: ${formValues.requirements || 'Not provided'}\n\nWe will contact you soon.\n\nThanks,\nMANU PHOTOGRAPHY`);
 
-      await fetch('http://localhost:8000/send-email', {
+      await fetch('https://manuphotography.onrender.com/send-email', {
         method: 'POST',
         body: emailData,
       });
