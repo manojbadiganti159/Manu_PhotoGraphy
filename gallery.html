@@ -270,6 +270,13 @@ footer h2{
 color:#D4AF37;
 margin-bottom:15px;
 }
+.gallery video{
+    width:100%;
+    display:block;
+    border-radius:15px;
+    margin-bottom:18px;
+    background:#000;
+}
 
     </style>
 </head>
@@ -383,21 +390,37 @@ async function loadGallery(folder = getGalleryFolder()) {
 
         gallery.innerHTML = "";
 
-        images.forEach(image => {
+        images.forEach(item => {
+
+            if (item.type === "image") {
 
             const a = document.createElement("a");
-            a.href = image.url;
+            a.href = item.url;
             a.className = "glightbox";
 
             const img = document.createElement("img");
-            img.src = image.url;
-            img.alt = image.id;
+            img.src = item.url;
+            img.alt = item.id;
             img.loading = "lazy";
 
             a.appendChild(img);
             gallery.appendChild(a);
 
-        });
+        } else {
+
+            const video = document.createElement("video");
+
+            video.src = item.url;
+            video.controls = true;
+            video.muted = true;
+            video.playsInline = true;
+            video.preload = "metadata";
+
+            gallery.appendChild(video);
+
+        }
+
+    });
 
         GLightbox({
             touchNavigation: true,
