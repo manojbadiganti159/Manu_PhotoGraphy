@@ -477,10 +477,7 @@ bookingForm.addEventListener('submit', async function(e) {
       localStorage.setItem('bookingDraft', JSON.stringify(formValues));
 
       const emailData = new FormData();
-      emailData.append('to_email', formValues.email);
-      emailData.append('subject', 'Your booking request has been received');
-      emailData.append('message', `Hello ${formValues.fullName},\n\nYour booking request has been received.\n\nEvent Type: ${formValues.photoshootType}\nDate: ${formValues.date}\nTime: ${formValues.time}\nLocation: ${formValues.location || 'Not provided'}\nPeople: ${formValues.people || 'Not provided'}\nRequirements: ${formValues.requirements || 'Not provided'}\n\nWe will contact you soon.\n\nThanks,\nMANU PHOTOGRAPHY`);
-
+      
       await fetch('https://manuphotography.onrender.com/send-email', {
         method: 'POST',
         body: emailData,
