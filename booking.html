@@ -476,12 +476,7 @@ bookingForm.addEventListener('submit', async function(e) {
       const formValues = Object.fromEntries(data.entries());
       localStorage.setItem('bookingDraft', JSON.stringify(formValues));
 
-      const emailData = new FormData();
       
-      await fetch('https://manuphotography.onrender.com/send-email', {
-        method: 'POST',
-        body: emailData,
-      });
     } else {
       submitButton.disabled = false;
       submitButton.textContent = 'Submit Booking';
