@@ -8,6 +8,7 @@
 <title>Contact | MANU PHOTOGRAPHY</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -221,7 +222,7 @@ margin-top:20px;
 }
 
 .social{
-margin-top:20px;
+margin-top:25px;
 display:flex;
 justify-content:center;
 gap:15px;
@@ -229,12 +230,28 @@ flex-wrap:wrap;
 }
 
 .social a{
+width:52px;
+height:52px;
+display:flex;
+align-items:center;
+justify-content:center;
 text-decoration:none;
 background:#D4AF37;
-color:black;
-padding:10px 20px;
-border-radius:30px;
-font-weight:bold;
+color:#000;
+border-radius:50%;
+font-size:23px;
+transition:all .3s ease;
+}
+
+.social a:hover{
+background:#fff;
+color:#000;
+transform:translateY(-4px);
+box-shadow:0 5px 15px rgba(212,175,55,.25);
+}
+
+.social a i{
+line-height:1;
 }
 
 footer{
@@ -308,15 +325,30 @@ padding:20px;
 
 <div class="social">
 
-<a href="https://www.instagram.com/stories_by_manu_/">Instagram</a>
+<a href="https://www.instagram.com/stories_by_manu_/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+</a>
 
-<a href="https://www.youtube.com/@STORIESBYMANU26">YouTube</a>
+<a href="https://www.youtube.com/@STORIESBYMANU26"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="YouTube">
+    <i class="fa-brands fa-youtube"></i>
+</a>
 
-<a href="https://wa.me/918019225206">WhatsApp</a>
+<a href="https://wa.me/918019225206"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 </div>
 
-<iframe src="https://www.google.com/maps?q=17.9893975,83.4009462&z=17&output=embed""></iframe>
+<iframe src="https://www.google.com/maps?q=17.9893975,83.4009462&z=17&output=embed"></iframe>
 
 </div>
 
