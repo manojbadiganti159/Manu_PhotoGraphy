@@ -8,214 +8,316 @@
 <title>Services | MANU PHOTOGRAPHY</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
 <link rel="manifest" href="site.webmanifest">
+
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
 }
 
 body{
-background:#0d0d0d;
-color:#fff;
+    background:#0d0d0d;
+    color:#fff;
 }
 
+/* ================= HEADER ================= */
+
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#000;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-z-index:1003;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    z-index:1003;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:30px;
-font-family:Cinzel;
-color:#D4AF37;
-text-decoration:none;
-font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:30px;
+    font-family:Cinzel,serif;
+    color:#D4AF37;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 .logo img{
-width:44px;
-height:44px;
-object-fit:cover;
-border-radius:50%;
-flex:none;
+    width:44px;
+    height:44px;
+    object-fit:cover;
+    border-radius:50%;
+    flex:none;
 }
 
+/* ================= MENU BUTTON ================= */
+
 .menu-toggle{
-display:none;
-flex-direction:column;
-gap:5px;
-background:transparent;
-border:none;
-cursor:pointer;
-padding:0;
-margin-left:auto;
-z-index:1004;
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    padding:0;
+    margin-left:auto;
+    z-index:1004;
 }
 
 .menu-toggle span{
-width:28px;
-height:2px;
-background:#fff;
-transition:all .3s ease;
+    width:28px;
+    height:2px;
+    background:#fff;
+    transition:all .3s ease;
 }
 
+/* ================= NAVIGATION ================= */
+
 nav ul{
-display:flex;
-list-style:none;
+    display:flex;
+    list-style:none;
 }
 
 nav ul li{
-margin-left:30px;
+    margin-left:30px;
 }
 
 nav ul li a{
-text-decoration:none;
-color:white;
-transition:.3s;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
 }
 
 nav ul li a:hover,
-.active{
-color:#D4AF37;
+nav ul li a.active{
+    color:#D4AF37;
 }
+
+/* ================= MOBILE NAVIGATION ================= */
 
 @media(max-width:900px){
-header{padding:16px 18px;gap:14px;}
 
-.logo{font-size:24px;gap:10px;line-height:1.05;}
+    header{
+        padding:16px 18px;
+        gap:14px;
+    }
 
-.logo img{width:34px;height:34px;}
+    .logo{
+        font-size:24px;
+        gap:10px;
+        line-height:1.05;
+    }
 
-.menu-toggle{display:flex;}
-nav{
-position:fixed;
-top:0;
-left:-100%;
-width:280px;
-height:100vh;
-background:#050505;
-padding:90px 24px 24px;
-transition:left .3s ease;
-box-shadow:8px 0 30px rgba(0,0,0,.45);
-z-index:1002;
-border-right:1px solid rgba(212,175,55,0.3);
-}
-nav.open{left:0;}
-nav ul{flex-direction:column;gap:18px;align-items:flex-start;}
-nav ul li{margin-left:0;}
-nav ul li a{display:block;font-size:18px;padding:12px 6px;width:100%;}
+    .logo img{
+        width:34px;
+        height:34px;
+    }
+
+    .menu-toggle{
+        display:flex;
+    }
+
+    nav{
+        position:fixed;
+        top:0;
+        left:-100%;
+        width:280px;
+        height:100vh;
+        background:#050505;
+        padding:90px 24px 24px;
+        transition:left .3s ease;
+        box-shadow:8px 0 30px rgba(0,0,0,.45);
+        z-index:1002;
+        border-right:1px solid rgba(212,175,55,.3);
+    }
+
+    nav.open{
+        left:0;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:18px;
+        align-items:flex-start;
+    }
+
+    nav ul li{
+        margin-left:0;
+    }
+
+    nav ul li a{
+        display:block;
+        font-size:18px;
+        padding:12px 6px;
+        width:100%;
+    }
 }
 
 body.menu-open::before{
-content:"";
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.55);
-z-index:1001;
-pointer-events:auto;
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:1001;
+    pointer-events:auto;
 }
 
-body.menu-open{overflow:hidden;}
+body.menu-open{
+    overflow:hidden;
+}
+
+/* ================= BANNER ================= */
 
 .banner{
-margin-top:80px;
-height:45vh;
-background:url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80") center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
+    margin-top:80px;
+    height:45vh;
+    background:url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .banner h1{
-font-size:60px;
-font-family:Cinzel;
-color:#D4AF37;
+    font-size:60px;
+    font-family:Cinzel,serif;
+    color:#D4AF37;
+    text-align:center;
 }
 
+/* ================= SERVICES ================= */
+
 .container{
-width:90%;
-margin:70px auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+    width:90%;
+    margin:70px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
 .card{
-background:#181818;
-border-radius:15px;
-overflow:hidden;
-transition:.4s;
-box-shadow:0 5px 15px rgba(0,0,0,.4);
+    background:#181818;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
 }
 
 .card:hover{
-transform:translateY(-10px);
+    transform:translateY(-10px);
 }
 
 .card img{
-width:100%;
-height:220px;
-object-fit:cover;
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
 }
 
 .content{
-padding:25px;
+    padding:25px;
 }
 
 .content h2{
-color:#D4AF37;
-margin-bottom:15px;
-font-family:Cinzel;
+    color:#D4AF37;
+    margin-bottom:15px;
+    font-family:Cinzel,serif;
 }
 
 .content p{
-line-height:1.7;
-color:#ccc;
-margin-bottom:20px;
+    line-height:1.7;
+    color:#ccc;
+    margin-bottom:20px;
 }
 
 .btn{
-display:inline-block;
-padding:12px 30px;
-background:#D4AF37;
-color:#000;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
+    display:inline-block;
+    padding:12px 30px;
+    background:#D4AF37;
+    color:#000;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
 }
 
 .btn:hover{
-background:white;
+    background:#fff;
+    transform:translateY(-2px);
 }
 
+/* ================= FOOTER ================= */
+
 footer{
-background:#111;
-padding:30px;
-text-align:center;
-margin-top:50px;
+    background:#111;
+    padding:30px;
+    text-align:center;
+    margin-top:50px;
+}
+
+footer h2{
+    color:#a5861d;
+    margin-bottom:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .banner{
+        height:40vh;
+    }
+
+    .banner h1{
+        font-size:42px;
+        padding:20px;
+    }
+
+    .container{
+        width:95%;
+        margin:50px auto;
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .card img{
+        height:220px;
+    }
+
+    .content{
+        padding:22px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .banner h1{
+        font-size:34px;
+    }
+
+    .card img{
+        height:200px;
+    }
+
 }
 
 </style>
@@ -224,143 +326,332 @@ margin-top:50px;
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-<div class="logo"><img src="Untitled design (4).png" alt="MANU Photography logo" referrerpolicy="no-referrer">MANU PHOTOGRAPHY</div>
+    <a class="logo" href="index.html">
+        <img
+            src="Untitled design (4).png"
+            alt="MANU Photography logo"
+            referrerpolicy="no-referrer"
+        >
+        <span>MANU PHOTOGRAPHY</span>
+    </a>
 
-<button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-<span></span><span></span><span></span>
-</button>
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-<nav>
-<ul>
+    <nav>
 
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="portfolio.html">Portfolio</a></li>
-<li><a href="services.html" class="active">Services</a></li>
-<li><a href="booking.html">Booking</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
+        <ul>
 
-</ul>
-</nav>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="portfolio.html">Portfolio</a>
+            </li>
+
+            <li>
+                <a href="services.html" class="active">Services</a>
+            </li>
+
+            <li>
+                <a href="booking.html">Booking</a>
+            </li>
+
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
 
 </header>
 
+<!-- ================= BANNER ================= -->
+
 <section class="banner">
 
-<h1>Our Services</h1>
+    <h1>Our Services</h1>
 
 </section>
+
+<!-- ================= SERVICES ================= -->
 
 <section class="container">
 
-<div class="card">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM-MOHWEwXX9Zq8dDyOsYHtqr8MWSV3yHUkn3rnuGSQCKgxAoGwx5U5AM&s=10">
-<div class="content">
-<h2>Wedding Photography</h2>
-<p>Luxury wedding photography with premium albums and cinematic storytelling.</p>
-<a href="booking.html" class="btn">Book Now</a>
-</div>
-</div>
+    <div class="card">
 
-<div class="card">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_MW49nMYvgqJimreAe7E8i5BugpG7Kg4mO0FhrmFs11H5XOArEYy7PH1S&s=10">
-<div class="content">
-<h2>Pre Wedding <br> Shoot</h2>
-<p>Creative destination and outdoor pre-wedding photography sessions.</p>
-<a href="booking.html" class="btn">Book Now</a>
-</div>
-</div>
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM-MOHWEwXX9Zq8dDyOsYHtqr8MWSV3yHUkn3rnuGSQCKgxAoGwx5U5AM&s=10"
+            alt="Wedding Photography"
+            loading="lazy"
+        >
 
-<div class="card">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDg-sCw7f6X871Z1y3Xj-VsmgcPZVFZYsw7gsPPEVN6Os_vjCAwuL5FnKa&s=10">
-<div class="content">
-<h2>Halfsaree Ceremony</h2>
-<p>Capture colorful haldi celebrations with vibrant candid moments.</p>
-<a href="booking.html" class="btn">Book Now</a>
-</div>
-</div>
+        <div class="content">
 
-<div class="card">
-<img src="https://images-pw.pixieset.com/site/BAxvyK/e7DE4X/PregnancyPhotoshoot26-a1d36859-1500.jpg">
-<div class="content">
-<h2>Maternity <br>Shoot</h2>
-<p>Elegant maternity photography to preserve your beautiful memories.</p>
-<a href="booking.html" class="btn">Book Now</a>
-</div>
-</div>
+            <h2>Wedding Photography</h2>
 
-<div class="card">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReIv4RusM8Q6kFsiBAVmRS7c2dt9GL2m3qTHtDxOB5CT_R5PXodPbQ7fof&s=10">
-<div class="content">
-<h2>Birthday Events</h2>
-<p>Professional birthday photography and videography coverage.</p>
-<a href="booking.html" class="btn">Book Now</a>
-</div>
-</div>
+            <p>
+                Luxury wedding photography with premium albums
+                and cinematic storytelling.
+            </p>
 
-<div class="card">
-<img src="https://img.magnific.com/free-photo/close-up-man-controls-drone-dawn-sun-volcano-batur-bali-indonesia_72229-955.jpg?semt=ais_hybrid&w=740&q=80">
-<div class="content">
-<h2>Drone &<br> Cinematic Video</h2>
-<p>4K aerial drone shots and cinematic wedding films.</p>
-<a href="booking.html" class="btn">Book Now</a>
-</div>
-</div>
+            <a href="booking.html" class="btn">Book Now</a>
 
-<div class="card">
-<img src="https://5.imimg.com/data5/SELLER/Default/2023/4/297504463/WW/WC/KE/185234722/ad-films-services-500x500.jpg">
-<div class="content">
-<h2>Reels & <br> Social Media</h2>
-<p>More than a reel-it's your story preserved with passion.</p>
-<a href="booking.html" class="btn">Book Now</a>
-</div>
-</div>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_MW49nMYvgqJimreAe7E8i5BugpG7Kg4mO0FhrmFs11H5XOArEYy7PH1S&s=10"
+            alt="Pre Wedding Shoot"
+            loading="lazy"
+        >
+
+        <div class="content">
+
+            <h2>Pre Wedding Shoot</h2>
+
+            <p>
+                Creative destination and outdoor pre-wedding
+                photography sessions.
+            </p>
+
+            <a href="booking.html" class="btn">Book Now</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDg-sCw7f6X871Z1y3Xj-VsmgcPZVFZYsw7gsPPEVN6Os_vjCAwuL5FnKa&s=10"
+            alt="Halfsaree Ceremony"
+            loading="lazy"
+        >
+
+        <div class="content">
+
+            <h2>Halfsaree Ceremony</h2>
+
+            <p>
+                Capture colorful celebrations with vibrant
+                candid moments.
+            </p>
+
+            <a href="booking.html" class="btn">Book Now</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <img
+            src="https://images-pw.pixieset.com/site/BAxvyK/e7DE4X/PregnancyPhotoshoot26-a1d36859-1500.jpg"
+            alt="Maternity Shoot"
+            loading="lazy"
+        >
+
+        <div class="content">
+
+            <h2>Maternity Shoot</h2>
+
+            <p>
+                Elegant maternity photography to preserve
+                your beautiful memories.
+            </p>
+
+            <a href="booking.html" class="btn">Book Now</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReIv4RusM8Q6kFsiBAVmRS7c2dt9GL2m3qTHtDxOB5CT_R5PXodPbQ7fof&s=10"
+            alt="Birthday Events"
+            loading="lazy"
+        >
+
+        <div class="content">
+
+            <h2>Birthday Events</h2>
+
+            <p>
+                Professional birthday photography and
+                videography coverage.
+            </p>
+
+            <a href="booking.html" class="btn">Book Now</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <img
+            src="https://img.magnific.com/free-photo/close-up-man-controls-drone-dawn-sun-volcano-batur-bali-indonesia_72229-955.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Drone and Cinematic Video"
+            loading="lazy"
+        >
+
+        <div class="content">
+
+            <h2>Drone & Cinematic Video</h2>
+
+            <p>
+                4K aerial drone shots and cinematic wedding films.
+            </p>
+
+            <a href="booking.html" class="btn">Book Now</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <img
+            src="https://5.imimg.com/data5/SELLER/Default/2023/4/297504463/WW/WC/KE/185234722/ad-films-services-500x500.jpg"
+            alt="Reels and Social Media"
+            loading="lazy"
+        >
+
+        <div class="content">
+
+            <h2>Reels & Social Media</h2>
+
+            <p>
+                More than a reel — it's your story preserved
+                with passion.
+            </p>
+
+            <a href="booking.html" class="btn">Book Now</a>
+
+        </div>
+
+    </div>
 
 </section>
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<h2 style="color:#a5861d;">MANU PHOTOGRAPHY</h2>
+    <h2>MANU PHOTOGRAPHY</h2>
 
-<p>Dreams Change Into Stories</p>
+    <p>Dreams Change Into Stories</p>
 
-<p>📞 +91 8019225206</p>
+    <p>📞 +91 8019225206</p>
 
-<p>© 2026 MANU PHOTOGRAPHY. All Rights Reserved.</p>
+    <p>© 2026 MANU PHOTOGRAPHY. All Rights Reserved.</p>
 
 </footer>
 
+<!-- ================= MOBILE MENU SCRIPT ================= -->
+
 <script>
+
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
-if (menuToggle && nav) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    document.body.classList.toggle('menu-open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
 
-  document.addEventListener('click', (event) => {
-    if (window.innerWidth <= 900 && nav.classList.contains('open') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
-      nav.classList.remove('open');
-      document.body.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
+if(menuToggle && nav){
 
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 900) {
-        nav.classList.remove('open');
-        document.body.classList.remove('menu-open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
+    menuToggle.addEventListener('click', () => {
+
+        const isOpen = nav.classList.toggle('open');
+
+        document.body.classList.toggle('menu-open', isOpen);
+
+        menuToggle.setAttribute(
+            'aria-expanded',
+            isOpen ? 'true' : 'false'
+        );
+
     });
-  });
+
+
+    document.addEventListener('click', (event) => {
+
+        if(
+            window.innerWidth <= 900 &&
+            nav.classList.contains('open') &&
+            !nav.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ){
+
+            nav.classList.remove('open');
+
+            document.body.classList.remove('menu-open');
+
+            menuToggle.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
+        }
+
+    });
+
+
+    document.querySelectorAll('nav a').forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            if(window.innerWidth <= 900){
+
+                nav.classList.remove('open');
+
+                document.body.classList.remove('menu-open');
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+            }
+
+        });
+
+    });
+
 }
+
 </script>
+
 </body>
 </html>

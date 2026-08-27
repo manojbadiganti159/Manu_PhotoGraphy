@@ -174,25 +174,6 @@ flex-wrap:wrap;
 gap:15px;
 }
 
-.buttons button{
-
-padding:12px 25px;
-border:none;
-background:#181818;
-color:white;
-border-radius:30px;
-cursor:pointer;
-transition:.3s;
-
-}
-
-.buttons button:hover{
-
-background:#D4AF37;
-color:#000;
-
-}
-
 .gallery{
 
 padding:20px 10% 80px;
@@ -243,7 +224,45 @@ padding:30px;
 text-align:center;
 
 }
+.category-subtitle{
+    margin-top:-18px;
+    margin-bottom:30px;
+    color:#aaa;
+    font-size:15px;
+    letter-spacing:.4px;
+    transition:all .3s ease;
+    cursor:default;
+}
 
+.category-subtitle:hover{
+    color:#D4AF37;
+    text-shadow:0 0 10px rgba(212,175,55,.35);
+    transform:translateY(-1px);
+}
+
+/* Category Buttons */
+
+.category-btn{
+    display:inline-block;
+    padding:12px 25px;
+    border:1px solid rgba(212,175,55,.25);
+    background:#181818;
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
+    font-family:Poppins,sans-serif;
+    font-size:15px;
+    text-decoration:none;
+    transition:all .3s ease;
+}
+
+.category-btn:hover{
+    background:#D4AF37;
+    color:#000;
+    border-color:#D4AF37;
+    transform:translateY(-3px);
+    box-shadow:0 6px 18px rgba(212,175,55,.25);
+}
 </style>
 
 </head>
@@ -283,35 +302,49 @@ text-align:center;
 </header>
 
 <section class="banner">
-
-
-
 </section>
 
 <section class="categories">
 
 <h2>Photography Categories</h2>
 
+<p class="category-subtitle">
+    Click on a category to explore our work & recent captures
+</p>
+
 <div class="buttons">
 
-<a class="service-link" href="gallery.html?folder=photos"><div class="card"><button data-folder="photos/*">All</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Wedding"><div class="card"><button data-folder="photos/Wedding">Wedding</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Pre Wedding"><div class="card"><button data-folder="photos/Pre Wedding">Pre Wedding</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Haldi"><div class="card"><button data-folder="photos/Haldi">Haldi</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Mehendi"><div class="card"><button data-folder="photos/Mehendi">Mehendi</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Reception"><div class="card"><button data-folder="photos/Reception">Reception</button></div></a>   
-<a class="service-link" href="gallery.html?folder=photos/Engagement"><div class="card"><button data-folder="photos/Engagement">Engagement</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Bride"><div class="card"><button data-folder="photos/Bride">Bride</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Groom"><div class="card"><button data-folder="photos/Groom">Groom</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Halfsaree"><div class="card"><button data-folder="photos/Halfsaree">Halfsaree</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Birthday"><div class="card"><button data-folder="photos/Birthday">Birthday</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Baby Shoot"><div class="card"><button data-folder="photos/Baby Shoot">Baby Shoot</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Maternity"><div class="card"><button data-folder="photos/Maternity">Maternity</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Drone"><div class="card"><button data-folder="photos/Drone">Drone</button></div></a>
-<a class="service-link" href="gallery.html?folder=photos/Cinematic"><div class="card"><button data-folder="photos/Cinematic">Cinematic</button></div></a>
+    <a class="category-btn" href="gallery.html?folder=photos">All</a>
 
-</section>
+    <a class="category-btn" href="gallery.html?folder=photos/Wedding">Wedding</a>
 
+    <a class="category-btn" href="gallery.html?folder=photos/Pre%20Wedding">Pre Wedding</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Haldi">Haldi</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Mehendi">Mehendi</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Reception">Reception</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Engagement">Engagement</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Bride">Bride</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Groom">Groom</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Halfsaree">Halfsaree</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Birthday">Birthday</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Baby%20Shoot">Baby Shoot</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Maternity">Maternity</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Drone">Drone</a>
+
+    <a class="category-btn" href="gallery.html?folder=photos/Cinematic">Cinematic</a>
+
+</div>
 
 </section>
 

@@ -198,23 +198,26 @@ resize:none;
 }
 
 .btn{
-width:100%;
-padding:15px;
-border:none;
-background:#D4AF37;
-color:black;
-font-size:18px;
-font-weight:bold;
-border-radius:8px;
-cursor:pointer;
-margin-top:10px;
-transition:all 0.3s ease;
+    width:100%;
+    padding:15px;
+    border:1px solid rgba(212,175,55,.25);
+    background:#181818;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+    transition:all .3s ease;
 }
 
 .btn:hover{
-background:white;
+    background:#D4AF37;
+    color:#000;
+    border-color:#D4AF37;
+    transform:translateY(-3px);
+    box-shadow:0 6px 18px rgba(212,175,55,.35);
 }
-
 .btn:disabled{
 cursor:not-allowed;
 opacity:0.8;
@@ -242,17 +245,26 @@ color:#fff;
 }
 
 .whatsapp{
-display:block;
-text-align:center;
-margin-top:20px;
-padding:15px;
-background:#25D366;
-color:white;
-text-decoration:none;
-font-weight:bold;
-border-radius:8px;
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    padding:15px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:8px;
+    border:1px solid transparent;
+    transition:all .3s ease;
 }
 
+.whatsapp:hover{
+    background:#D4AF37;
+    color:#000;
+    border-color:#D4AF37;
+    transform:translateY(-3px);
+    box-shadow:0 6px 18px rgba(212,175,55,.25);
+}
 footer{
 background:#111;
 padding:30px;
@@ -321,7 +333,7 @@ margin-top:60px;
 
 <div class="inputBox">
 <label>Event Type</label>
-<select name="photoshootType" required>
+<select name="photoshootType" placeholder="Select Event Type" required>
 <option>Wedding</option>
 <option>Pre Wedding</option>
 <option>Reception</option>

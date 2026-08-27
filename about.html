@@ -5,242 +5,374 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About |MANU PHOTOGRAPHY</title>
+<title>About | MANU PHOTOGRAPHY</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
 <link rel="manifest" href="site.webmanifest">
+
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
 }
 
 body{
-background:#0d0d0d;
-color:white;
+    background:#0d0d0d;
+    color:#fff;
 }
 
+/* ================= HEADER ================= */
+
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:#000;
-z-index:1003;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    z-index:1003;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:30px;
-font-family:Cinzel;
-color:#D4AF37;
-text-decoration:none;
-font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:30px;
+    font-family:Cinzel,serif;
+    color:#D4AF37;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 .logo img{
-width:44px;
-height:44px;
-object-fit:cover;
-border-radius:50%;
-flex:none;
+    width:44px;
+    height:44px;
+    object-fit:cover;
+    border-radius:50%;
+    flex:none;
 }
 
+/* ================= MENU BUTTON ================= */
+
 .menu-toggle{
-display:none;
-flex-direction:column;
-gap:5px;
-background:transparent;
-border:none;
-cursor:pointer;
-padding:0;
-margin-left:auto;
-z-index:1004;
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    padding:0;
+    margin-left:auto;
+    z-index:1004;
 }
 
 .menu-toggle span{
-width:28px;
-height:2px;
-background:#fff;
-transition:all .3s ease;
+    width:28px;
+    height:2px;
+    background:#fff;
+    transition:all .3s ease;
 }
 
+/* ================= NAVIGATION ================= */
+
 nav ul{
-display:flex;
-list-style:none;
+    display:flex;
+    list-style:none;
 }
 
 nav ul li{
-margin-left:30px;
+    margin-left:30px;
 }
 
 nav ul li a{
-text-decoration:none;
-color:white;
-transition:.3s;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
 }
 
 nav ul li a:hover,
-.active{
-color:#D4AF37;
+nav ul li a.active{
+    color:#D4AF37;
 }
+
+/* ================= MOBILE NAVIGATION ================= */
 
 @media(max-width:900px){
-header{padding:16px 18px;gap:14px;}
 
-.logo{font-size:24px;gap:10px;line-height:1.05;}
+    header{
+        padding:16px 18px;
+        gap:14px;
+    }
 
-.logo img{width:34px;height:34px;}
+    .logo{
+        font-size:24px;
+        gap:10px;
+        line-height:1.05;
+    }
 
-.menu-toggle{display:flex;}
-nav{
-position:fixed;
-top:0;
-left:-100%;
-width:280px;
-height:100vh;
-background:#050505;
-padding:90px 24px 24px;
-transition:left .3s ease;
-box-shadow:8px 0 30px rgba(0,0,0,.45);
-z-index:1002;
-border-right:1px solid rgba(212,175,55,0.3);
-}
-nav.open{left:0;}
-nav ul{flex-direction:column;gap:18px;align-items:flex-start;}
-nav ul li{margin-left:0;}
-nav ul li a{display:block;font-size:18px;padding:12px 6px;width:100%;}
+    .logo img{
+        width:34px;
+        height:34px;
+    }
+
+    .menu-toggle{
+        display:flex;
+    }
+
+    nav{
+        position:fixed;
+        top:0;
+        left:-100%;
+        width:280px;
+        height:100vh;
+        background:#050505;
+        padding:90px 24px 24px;
+        transition:left .3s ease;
+        box-shadow:8px 0 30px rgba(0,0,0,.45);
+        z-index:1002;
+        border-right:1px solid rgba(212,175,55,.3);
+    }
+
+    nav.open{
+        left:0;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:18px;
+        align-items:flex-start;
+    }
+
+    nav ul li{
+        margin-left:0;
+    }
+
+    nav ul li a{
+        display:block;
+        font-size:18px;
+        padding:12px 6px;
+        width:100%;
+    }
 }
 
 body.menu-open::before{
-content:"";
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.55);
-z-index:1001;
-pointer-events:auto;
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:1001;
+    pointer-events:auto;
 }
 
-body.menu-open{overflow:hidden;}
+body.menu-open{
+    overflow:hidden;
+}
+
+/* ================= BANNER ================= */
 
 .banner{
-height:50vh;
-background:url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=80") center/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-margin-top:80px;
+    height:50vh;
+    margin-top:80px;
+    background:url("https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=80") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .banner h1{
-font-size:60px;
-font-family:Cinzel;
-color:#D4AF37;
+    font-size:60px;
+    font-family:Cinzel,serif;
+    color:#D4AF37;
+    text-align:center;
 }
 
+/* ================= ABOUT SECTION ================= */
+
 .container{
-width:90%;
-max-width:1200px;
-margin:70px auto;
-display:flex;
-gap:50px;
-align-items:center;
-flex-wrap:wrap;
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+    display:flex;
+    gap:50px;
+    align-items:center;
+    flex-wrap:wrap;
 }
 
 .image{
-flex:1;
+    flex:1;
+    min-width:300px;
 }
 
 .image img{
-width:100%;
-border-radius:15px;
+    width:100%;
+    display:block;
+    border-radius:15px;
 }
 
 .content{
-flex:1;
+    flex:1;
+    min-width:300px;
 }
 
 .content h2{
-font-size:42px;
-font-family:Cinzel;
-color:#D4AF37;
-margin-bottom:20px;
+    font-size:42px;
+    font-family:Cinzel,serif;
+    color:#D4AF37;
+    margin-bottom:20px;
 }
 
 .content p{
-font-size:17px;
-line-height:1.8;
-color:#ccc;
-margin-bottom:20px;
+    font-size:17px;
+    line-height:1.8;
+    color:#ccc;
+    margin-bottom:20px;
 }
 
+/* ================= STATS ================= */
+
 .stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-width:90%;
-margin:50px auto;
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
 .box{
-background:#181818;
-padding:30px;
-text-align:center;
-border-radius:10px;
+    background:#181818;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
 }
 
 .box h2{
-color:#D4AF37;
-font-size:35px;
+    color:#D4AF37;
+    font-size:35px;
 }
 
 .box p{
-margin-top:10px;
+    margin-top:10px;
+    color:#ccc;
 }
 
+/* ================= FOOTER ================= */
+
 footer{
-margin-top:80px;
-background:#111;
-padding:30px;
-text-align:center;
+    margin-top:80px;
+    background:#111;
+    padding:30px;
+    text-align:center;
+}
+
+footer h2{
+    color:#a5861d;
+    margin-bottom:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .container{
+        width:90%;
+        margin:60px auto;
+        flex-direction:column;
+        gap:35px;
+    }
+
+    .image,
+    .content{
+        width:100%;
+        min-width:0;
+    }
+
+    .content h2{
+        font-size:34px;
+    }
+
+    .content p{
+        font-size:16px;
+    }
+
+    .stats{
+        width:90%;
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
 @media(max-width:768px){
 
-.container{
-flex-direction:column;
+    .banner{
+        height:40vh;
+    }
+
+    .banner h1{
+        font-size:42px;
+        padding:20px;
+    }
+
+    header{
+        padding:20px;
+    }
+
+    .container{
+        width:95%;
+    }
+
+    .stats{
+        width:95%;
+        gap:15px;
+    }
+
+    .box{
+        padding:25px 15px;
+    }
+
+    .box h2{
+        font-size:30px;
+    }
 }
 
-.stats{
-grid-template-columns:repeat(2,1fr);
-}
+@media(max-width:500px){
 
-.banner h1{
-font-size:40px;
-}
+    .banner h1{
+        font-size:34px;
+    }
 
-header{
-padding:20px;
-}
+    .content h2{
+        font-size:30px;
+    }
 
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .box{
+        padding:25px;
+    }
 }
 
 </style>
@@ -249,136 +381,234 @@ padding:20px;
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-<div class="logo"><img src="Untitled design (4).png" alt="MANU Photography logo" referrerpolicy="no-referrer">MANU PHOTOGRAPHY</div>
+    <a class="logo" href="index.html">
 
-<button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-<span></span><span></span><span></span>
-</button>
+        <img
+            src="Untitled design (4).png"
+            alt="MANU Photography logo"
+            referrerpolicy="no-referrer"
+        >
 
-<nav>
+        <span>MANU PHOTOGRAPHY</span>
 
-<ul>
+    </a>
 
-<li><a href="index.html">Home</a></li>
+    <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-<li><a href="about.html" class="active">About</a></li>
+    <nav>
 
-<li><a href="portfolio.html">Portfolio</a></li>
+        <ul>
 
-<li><a href="services.html">Services</a></li>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
 
-<li><a href="booking.html">Booking</a></li>
+            <li>
+                <a href="about.html" class="active">About</a>
+            </li>
 
-<li><a href="gallery.html">Gallery</a></li>
+            <li>
+                <a href="portfolio.html">Portfolio</a>
+            </li>
 
-<li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="services.html">Services</a>
+            </li>
 
-</ul>
+            <li>
+                <a href="booking.html">Booking</a>
+            </li>
 
-</nav>
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
 
 </header>
 
+<!-- ================= BANNER ================= -->
+
 <section class="banner">
 
-<h1>About Us</h1>
+    <h1>About Us</h1>
 
 </section>
+
+<!-- ================= ABOUT ================= -->
 
 <section class="container">
 
-<div class="image">
+    <div class="image">
 
-<img src="Manoj.jpg" alt="About MANU PHOTOGRAPHY">
+        <img
+            src="Manoj.jpg"
+            alt="About MANU PHOTOGRAPHY"
+            loading="lazy"
+        >
 
-</div>
+    </div>
 
-<div class="content">
+    <div class="content">
 
-<h2>Capturing Memories Forever</h2>
+        <h2>Capturing Memories Forever</h2>
 
-<p>
+        <p>
+            MANU PHOTOGRAPHY specializes in luxury wedding photography,
+            cinematic films, pre-wedding shoots, traditional events,
+            birthdays, maternity sessions, and drone cinematography.
+        </p>
 
-MANU PHOTOGRAPHY specializes in luxury wedding photography, cinematic films, pre-wedding shoots, traditional events, birthdays, maternity sessions, and drone cinematography.
+        <p>
+            Our goal is to transform every beautiful moment into a
+            timeless memory with creativity, passion, and professionalism.
+        </p>
 
-</p>
-
-<p>
-
-Our goal is to transform every beautiful moment into a timeless memory with creativity, passion, and professionalism.
-
-</p>
-
-</div>
+    </div>
 
 </section>
+
+<!-- ================= STATS ================= -->
 
 <section class="stats">
 
-<div class="box">
-<h2>300+</h2>
-<p>Happy Clients</p>
-</div>
+    <div class="box">
 
-<div class="box">
-<h2>200+</h2>
-<p>Events Covered</p>
-</div>
+        <h2>300+</h2>
 
-<div class="box">
-<h2>3+</h2>
-<p>Years Experience</p>
-</div>
+        <p>Happy Clients</p>
 
-<div class="box">
-<h2>100+</h2>
-<p>Albums Delivered</p>
-</div>
+    </div>
+
+    <div class="box">
+
+        <h2>200+</h2>
+
+        <p>Events Covered</p>
+
+    </div>
+
+    <div class="box">
+
+        <h2>3+</h2>
+
+        <p>Years Experience</p>
+
+    </div>
+
+    <div class="box">
+
+        <h2>100+</h2>
+
+        <p>Albums Delivered</p>
+
+    </div>
 
 </section>
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<h2 style="color:#a5861d;">MANU PHOTOGRAPHY</h2>
+    <h2>MANU PHOTOGRAPHY</h2>
 
-<p>Dreams Change Into Stories</p>
+    <p>Dreams Change Into Stories</p>
 
-<p>📞 +91 8019225206</p>
+    <p>📞 +91 8019225206</p>
 
-<p>© 2026 MANU PHOTOGRAPHY. All Rights Reserved.</p>
+    <p>© 2026 MANU PHOTOGRAPHY. All Rights Reserved.</p>
 
 </footer>
 
+<!-- ================= MOBILE MENU SCRIPT ================= -->
+
 <script>
+
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
-if (menuToggle && nav) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    document.body.classList.toggle('menu-open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
 
-  document.addEventListener('click', (event) => {
-    if (window.innerWidth <= 900 && nav.classList.contains('open') && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
-      nav.classList.remove('open');
-      document.body.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
+if(menuToggle && nav){
 
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 900) {
-        nav.classList.remove('open');
-        document.body.classList.remove('menu-open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-      }
+    menuToggle.addEventListener('click', () => {
+
+        const isOpen = nav.classList.toggle('open');
+
+        document.body.classList.toggle('menu-open', isOpen);
+
+        menuToggle.setAttribute(
+            'aria-expanded',
+            isOpen ? 'true' : 'false'
+        );
+
     });
-  });
+
+
+    document.addEventListener('click', (event) => {
+
+        if(
+            window.innerWidth <= 900 &&
+            nav.classList.contains('open') &&
+            !nav.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ){
+
+            nav.classList.remove('open');
+
+            document.body.classList.remove('menu-open');
+
+            menuToggle.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
+        }
+
+    });
+
+
+    document.querySelectorAll('nav a').forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            if(window.innerWidth <= 900){
+
+                nav.classList.remove('open');
+
+                document.body.classList.remove('menu-open');
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+
+            }
+
+        });
+
+    });
+
 }
+
 </script>
+
 </body>
 </html>
